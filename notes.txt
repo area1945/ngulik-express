@@ -1,0 +1,11 @@
+# Create Models
+sequelize model:create --name User --attributes first_name:string,last_name:string,bio:text
+
+# Creare New Migration
+sequelize migration:create --name add-email-to-user
+
+# Create Seed
+sequelize seed:create --name my-seed-file
+
+# Running Seed Data 
+sequelize db:seed:all
