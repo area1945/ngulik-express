@@ -9,3 +9,5 @@ sequelize seed:create --name my-seed-file
 
 # Running Seed Data 
 sequelize db:seed:all
+
+=> POSTMAN WITH JSON BODY

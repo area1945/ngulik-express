@@ -1,5 +1,5 @@
 {
-  "name": "zakuto-base-app-product",
+  "name": "ngulik-express",
   "version": "1.0.0",
   "description": "REST API for Base App Product with Node.js, Express and MySQL",
   "main": "server.js",
@@ -15,6 +15,7 @@
   "author": "Sandy Andryanto",
   "license": "ISC",
   "dependencies": {
+    "body-parse": "^0.1.0",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
