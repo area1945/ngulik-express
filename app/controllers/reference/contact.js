@@ -1,8 +1,16 @@
 const models = require("../../models")
 const contact = models.Contact
+const commonHelper = require("../../helpers/common")
 
 exports.list = (req, res) => {
+
+   
+    let limit = 10;
+    let offset = 5;
+
     contact.findAll({
+          offset: offset, 
+          limit: limit,
           order: [
             ['id', 'DESC']
           ]
@@ -21,6 +29,8 @@ exports.list = (req, res) => {
 
 exports.create = (req, res) => {
     let formData = req.body
+    formData.name = commonHelper.toSlug(formData.name)
+
     let newData = new contact(formData);
     let result = newData.save();
     result.then((data) => {
