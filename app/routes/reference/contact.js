@@ -6,11 +6,12 @@ module.exports = app => {
     const auth  = require("../../middlewares/auth")
     var router = require("express").Router();
 
-    router.post("/"+prefix+"/"+routeName+"/list", auth.tokenValid, routeController.list);
+    router.post("/"+prefix+"/"+routeName+"/list", routeController.list);
     router.post("/"+prefix+"/"+routeName+"/create", routeController.create);
     router.put("/"+prefix+"/"+routeName+"/update/:id", routeController.update);
     router.get("/"+prefix+"/"+routeName+"/detail/:id", routeController.detail);
     router.delete("/"+prefix+"/"+routeName+"/delete/:id", routeController.delete);
 
+    app.use("/"+prefix+"/"+routeName, auth.tokenValid);
     app.use(router);
 };
